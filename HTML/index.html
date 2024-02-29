@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="menu.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <title>Tasty Tales</title>
+</head>
+<body>
+
+    <!--- Navigation Bar -->
+    <div class="header">
+        <nav class="nav-bar">
+            <img src="menu.png" class="brand-name">
+            <a href="#" class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </a>
+            <div class="menu-bar">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="Add.html">Add Recipe</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+        <!-- Search Bar -->
+        <div class="title">Find a Recipe</div>
+        <div class="search-wrapper">
+            <div class="fa fa-search"></div>
+            <input type="text" name=""  id="search" placeholder="What do you want to eat?" onkeyup="search()">
+            <div class="fa fa-times" onclick="clearInput()" ></div>
+        </div>
+    </div>
+
+    <!-- Search Results -->
+        <div class="result">
+            <h1>Recipes: </h1>
+        </div>
+        
+        <!-- Main Content -->
+        <div class="card-grid" >
+            <div class="food-list" id="food-list">
+                    <p id="none" style="display: none;">Sorry, the food you were looking for was not available.</p>
+                    <div class="card card-shadow">
+                        <div class="card-header card-image">
+                            <img src="chicken-tikka-masala.jpg">
+                        </div>
+                        <div class="card-body" >
+                        <h3> Chicken Tikka Masala </h3>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn" onclick="getRecipeDetails()">Get Recipe</button>
+                        </div>
+                    </div>
+                    <div class="card card-shadow">
+                        <div class="card-header card-image">
+                            <img src="veg-briyani.jpeg">
+                        </div>
+                        <div class="card-body" >
+                        <h3> Vegetable Briyani </h3>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn" onclick="get2ndRecipe()">Get Recipe</button>
+                        </div>
+                    </div>
+                    <div class="card card-shadow">
+                        <div class="card-header card-image">
+                            <img src="palak-paneer.jpg">
+                        </div>
+                        <div class="card-body" >
+                            <h3>Palak Panneer</h3>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn" onclick="get3rdRecipe()">Get Recipe</button>
+                        </div>
+                    </div>
+                    <div class="card card-shadow">
+                        <div class="card-header card-image">
+                            <img src="butter-chicken.jpg">
+                        </div>
+                        <div class="card-body" >
+                            <h3>Butter Chicken</h3>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn" onclick="get4thRecipe()">Get Recipe</button>
+                        </div>
+                    </div>
+                    <div class="card card-shadow">
+                        <div class="card-header card-image">
+                            <img src="aloo-gobi.jpg">
+                        </div>
+                        <div class="card-body" >
+                        <h3> Aloo Gobi </h3>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn" onclick="get5thRecipe()">Get Recipe</button>
+                        </div>
+                    </div>
+                    <div class="card card-shadow">
+                        <div class="card-header card-image">
+                            <img src="channa-masala.jpg">
+                        </div>
+                        <div class="card-body" >
+                        <h3> Chana Masala</h3>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn" onclick="get6thRecipe()">Get Recipe</button>
+                        </div>
+                    </div>
+                    <div class="card card-shadow">
+                        <div class="card-header card-image">
+                            <img src="mutton-rogan-josh.webp">
+                        </div>
+                        <div class="card-body" >
+                        <h3>Mutton Rogan Josh</h3>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn" onclick="get7thRecipe()">Get Recipe</button>
+                        </div>
+                    </div>
+                    <div class="card card-shadow">
+                        <div class="card-header card-image">
+                            <img src="Sabut-Masoor-Dal-.webp">
+                        </div>
+                        <div class="card-body" >
+                        <h3>Sabut Masoor Dal</h3>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn" onclick="get8thRecipe()">Get Recipe</button>
+                        </div>
+                    </div>
+                    <div class="card card-shadow">
+                        <div class="card-header card-image">
+                            <img src="malai-kofta.jpg">
+                        </div>
+                        <div class="card-body" >
+                        <h3>Malai Kofta</h3>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn" onclick="get9thRecipe()">Get Recipe</button>
+                        </div>
+                    </div>
+                    <div class="card card-shadow">
+                        <div class="card-header card-image">
+                            <img src="Dal-makhani.jpg">
+                        </div>
+                        <div class="card-body" >
+                        <h3>Dal Makkani</h3>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn" onclick="get10thRecipe()">Get Recipe</button>
+                        </div>
+                    </div>
+                    <div class="card card-shadow">
+                        <div class="card-header card-image">
+                            <img src="samosa.webp">
+                        </div>
+                        <div class="card-body" >
+                        <h3>Samosa</h3>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn" onclick="get11thRecipe()">Get Recipe</button>
+                        </div>
+                    </div>
+                    <div class="card card-shadow">
+                        <div class="card-header card-image">
+                            <img src="vertical-shot-traditional-indian-paneer-butter-masala-cheese-cottage-curry-black-surface.jpg">
+                        </div>
+                        <div class="card-body" >
+                        <h3>Panner Butter Masala</h3>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn" onclick="get12thRecipe()">Get Recipe</button>
+                        </div>
+                    </div>
+            </div> 
+
+            <!--Ending of Main Content-->
+
+            <!--Recipe Details-->
+            <div class = "meal-detail" id="meal-detail">
+                <!-- recipe close btn -->
+                <button type = "button" class = "btn recipe-close-btn" id = "recipe-close-btn" onclick="closeBtn()">
+                    <i class ="fas fa-times"></i>
+                </button>
+
+                <!-- recipe details -->
+                <div class="meal-content">
+                    <h2 class="meal-name">Chicken Tikka Masala</h2>
+                    <div class="meal-about">
+                        <h3 class="meal-title-about">About Meal</h3>
+                        <p class="meal-descript-about">Chicken tikka masala is a dish consisting of roasted marinated chicken chunks (chicken tikka) in a spiced sauce. The sauce is usually creamy and orange-coloured. </p>
+                    </div>
+                    <div class = "meal-instruct">
+                        <h3>Ingredients:</h3>
+                        <p>🍥500g (about 1 pound) boneless, skinless chicken breasts or thighs, cut into bite-sized pieces
+                            <br>🍥1 cup plain yogurt
+                            <br>🍥2 tablespoons ginger garlic paste
+                            <br>🍥2 tablespoons garam masala
+                            <br>🍥1 tablespoon paprika
+                            <br>🍥2 cups tomatoes, diced or 1 can (14 oz) tomato puree
+                            <br>🍥2 medium onions, finely chopped
+                            <br>🍥1/2 cup heavy cream or coconut cream
+                            <br>🍥2 tablespoons butter or oil
+                            <br>🍥Juice of 1 lemon
+                            <br>🍥Salt to taste
+                            <br>🍥Fresh cilantro leaves for garnish (optional)
+                            <br><b>Optional spices for the marinade:</b>
+
+                            <br>🍥1 teaspoon turmeric
+                            <br>🍥1 teaspoon chili powder
+                            <br>🍥1 teaspoon coriander powder
+                            <br>🍥1 teaspoon fenugreek leaves (kasuri methi)
+                        </p>
+                        <h3>Instructions:</h3>
+                        <p><br>🍥Marinate chicken in a mixture of yogurt, ginger garlic paste, garam masala, paprika, lemon juice, and salt for at least 1 hour.
+                            <br>🍥Sauté finely chopped onions in butter until soft, then add diced tomatoes or tomato puree and cook until thickened.
+                            <br>🍥Stir in heavy cream or coconut cream, simmer for 5-10 minutes to thicken the sauce, season with salt.
+                            <br>🍥Grill or broil marinated chicken until cooked through and slightly charred.
+                            <br>🍥Alternatively, bake chicken in a preheated oven at 400°F for 20-25 minutes.
+                            <br>🍥Remove chicken from skewers and add to the prepared sauce, simmer for an additional 5 minutes.
+                            <br>🍥Adjust seasoning as needed, adding more salt or spices to taste.
+                            <br>🍥Garnish with fresh cilantro leaves if desired.
+                            <br>🍥Serve hot with rice, naan, or roti.
+                            <br>🍥Enjoy your flavorful Chicken Tikka Masala!
+                            </p>
+                
+                    </div>
+                    <div class = "meal-img">
+                        <img src = "chicken-tikka-masala.jpg" alt = "">
+                      </div>
+                      <div class = "meal-link">
+                        <a href="https://www.youtube.com/watch?v=lnRmIKkGCIA&pp=ygUbY2hpY2tlbiB0aWtrYSBtYXNhbGEgcmVjaXBl" class="meal-link-btn">Watch Video</a>
+                    </div>
+                </div>
+                
+            </div>
+            <div class = "second-meal-detail" id="second-meal-detail">
+                <!-- recipe close btn -->
+                <button type = "button" class = "btn recipe-close-btn" id = "recipe-close-btn" onclick="closeBtn2()">
+                    <i class ="fas fa-times"></i>
+                </button>
+
+                <!-- recipe details -->
+                <div class="meal-content">
+                    <h2 class="meal-name">Vegetable Briyani</h2>
+                    <div class="meal-about">
+                        <h3 class="meal-title-about">About Meal</h3>
+                        <p class="meal-descript-about">Vegetable Biryani is a fragrant and flavorful Indian rice dish cooked with mixed vegetables, aromatic spices, and basmati rice. It's a vegetarian version of the traditional biryani and is loved for its rich flavors and comforting taste. </p>
+                    </div>
+                    <div class = "meal-instruct">
+                        <h3>Ingredients:</h3>
+                        <p><br>🍥Basmati Rice: 2 cups
+                            <br>🍥Mixed Vegetables: 2 cups (commonly used vegetables include potatoes, carrots, peas, cauliflower, bell peppers, beans)
+                            <br>🍥Onions: 2 large, thinly sliced
+                            <br>🍥Tomatoes: 2 medium-sized, chopped
+                            <br>🍥Yogurt: 1/2 cup
+                            <br>🍥Ginger Garlic Paste: 2 tablespoons
+                            <br>🍥Green Chilies: 2, slit lengthwise (adjust according to spice preference)
+                            <br>🍥Biryani Masala: 2 tablespoons (store-bought or homemade blend of spices like cumin, coriander, cinnamon, cardamom, cloves, etc.)
+                            <br>🍥Whole Spices: Cinnamon stick, cardamom pods, cloves, bay leaves
+                            <br>🍥Saffron Strands: a pinch (optional)
+                            <br>🍥Ghee or Oil: 4 tablespoons
+                            <br>🍥Cilantro (Coriander) Leaves: a handful, chopped
+                            <br>🍥Mint Leaves: a handful, chopped
+                            <br>🍥Salt: to taste
+                            <br>🍥Fried Onions: for garnish (optional)
+                            <br>🍥Cashews and Raisins: for garnish (optional)
+                            
+                        </p>
+                        <h3>Instructions:</h3>
+                        <p><br>🍥Parboil basmati rice until 70-80% cooked, then drain and set aside.
+                            <br>🍥Sauté chopped vegetables until partially cooked, then set aside.
+                            <br>🍥In a large pot, heat ghee/oil, sauté onions until golden, add ginger garlic paste, green chilies, and chopped tomatoes, cook until soft.
+                            <br>🍥Stir in biryani masala and cook until aromatic.
+                            <br>🍥Layer partially cooked rice over the masala, followed by vegetables, repeat if needed, and top with fried onions, chopped cilantro, and mint leaves.
+                            <br>🍥Cover and cook on low heat until the rice is fully cooked and vegetables are tender, garnish with fried onions, cashews, and raisins if desired before serving.
+                            </p>
+                
+                    </div>
+                    <div class = "meal-img">
+                        <img src = "veg-briyani.jpeg" alt = "">
+                      </div>
+                      <div class = "meal-link">
+                        <a href="https://www.youtube.com/watch?v=S5Ngh6CFRmc&pp=ygUSdmVnIGJyaXlhbmkgcmVjaXBl" class="meal-link-btn" >Watch Video</a>
+                    </div>
+                </div>
+            </div>  
+            <div class = "third-meal-detail" id="third-meal-detail">
+                <!-- recipe close btn -->
+                <button type = "button" class = "btn recipe-close-btn" id = "recipe-close-btn" onclick="closeBtn3()">
+                    <i class ="fas fa-times"></i>
+                </button>
+
+                <!-- recipe details -->
+                <div class="meal-content">
+                    <h2 class="meal-name">Palak paneer</h2>
+                    <div class="meal-about">
+                        <h3 class="meal-title-about">About Meal</h3>
+                        <p class="meal-descript-about">Palak Paneer is a popular North Indian dish made with spinach (palak) and paneer (Indian cottage cheese), simmered together in a flavorful sauce. 
+                        </p>
+                    </div>
+                    <div class = "meal-instruct">
+                        <h3>Ingredients:</h3>
+                        <p><br>🍥Spinach: 500 grams (about 1 pound), fresh or frozen
+                            <br>🍥Paneer: 200-250 grams (about 7-9 ounces), cubed or crumbled
+                            <br>🍥Onions: 2 medium-sized, finely chopped
+                            <br>🍥Tomatoes: 2 medium-sized, chopped
+                            <br>🍥Ginger: 1-inch piece, finely chopped or grated
+                            <br>🍥Garlic: 4-5 cloves, minced
+                            <br>🍥Green Chilies: 2-3, chopped (adjust to taste)
+                            <br>🍥Cumin Seeds: 1 teaspoon
+                            <br>🍥Coriander Powder: 1 teaspoon
+                            <br>🍥Turmeric Powder: 1/2 teaspoon
+                            <br>🍥Garam Masala: 1 teaspoon
+                            <br>🍥Salt: to taste
+                            <br>🍥Oil or Ghee: 2-3 tablespoons
+                            <br>🍥Cream: 1/4 cup (optional, for added richness)
+                            <br>🍥Water or Vegetable Broth: as needed for consistency
+                            
+                        </p>
+                        <h3>Instructions:</h3>
+                        <p><br>🍥Blanch spinach in boiling water for 2 minutes, then transfer to ice water, drain, and blend into a smooth puree.
+                            <br>🍥Heat oil or ghee in a pan, add cumin seeds, chopped onions, ginger, garlic, and green chilies, sauté until onions turn translucent.
+                            <br>🍥Add chopped tomatoes and cook until they soften.
+                            <br>🍥Stir in coriander powder, turmeric powder, and salt, cook for a minute.
+                            <br>🍥Pour in the spinach puree and cook for 5-7 minutes until the raw flavor diminishes.
+                            <br>🍥Add paneer cubes or crumbles to the spinach gravy and simmer for another 5 minutes.
+                            <br>🍥Optionally, add cream for richness and garam masala for extra flavor, stir well.
+                            <br>🍥Serve hot with rice or naan bread. Enjoy your delicious Palak Paneer!
+                            </p>
+                
+                    </div>
+                    <div class = "meal-img">
+                        <img src = "palak-paneer.jpg" alt = "">
+                      </div>
+                      <div class = "meal-link">
+                        <a href="https://www.youtube.com/watch?v=b5bDtzWCR9M&pp=ygUTcGFsYWsgcGFuZWVyIHJlY2lwZQ%3D%3D" class="meal-link-btn" >Watch Video</a>
+                    </div>
+                </div>
+            </div>  
+            <div class = "four-meal-detail" id="four-meal-detail">
+                <!-- recipe close btn -->
+                <button type = "button" class = "btn recipe-close-btn" id = "recipe-close-btn" onclick="closeBtn4()">
+                    <i class ="fas fa-times"></i>
+                </button>
+
+                <!-- recipe details -->
+                <div class="meal-content">
+                    <h2 class="meal-name">Butter Chicken</h2>
+                    <div class="meal-about">
+                        <h3 class="meal-title-about">About Meal</h3>
+                        <p class="meal-descript-about">Butter Chicken, also known as Murgh Makhani, is a popular Indian dish known for its rich, creamy tomato-based sauce and tender pieces of chicken.  
+                        </p>
+                    </div>
+                    <div class = "meal-instruct">
+                        <h3>Ingredients:</h3>
+                        <p><br>🍥Chicken: 500 grams (about 1 pound), boneless, skinless chicken thighs or breast, cut into bite-sized pieces
+                            <br>🍥Butter: 3-4 tablespoons
+                            <br>🍥Yogurt: 1/2 cup, plain
+                            <br>🍥Ginger Garlic Paste: 2 tablespoons
+                            <br>🍥Tomato Puree: 1 cup, or 2 large tomatoes pureed
+                            <br>🍥Onion: 1 large, finely chopped
+                            <br>🍥Heavy Cream: 1/2 cup
+                            <br>🍥Cashew Paste: 1/4 cup (optional, for extra creaminess)
+                            <br>🍥Garam Masala: 1 tablespoon
+                            <br>🍥Cumin Powder: 1 teaspoon
+                            <br>🍥Coriander Powder: 1 teaspoon
+                            <br>🍥Chili Powder: 1 teaspoon (adjust to taste)
+                            <br>🍥Turmeric Powder: 1/2 teaspoon
+                            <br>🍥Kasuri Methi (Dried Fenugreek Leaves): 1 tablespoon, crushed (optional, for flavor)
+                            <br>🍥Salt: to taste
+                            <br>🍥Sugar: 1 teaspoon (optional, to balance acidity)
+                            <br>🍥Lemon Juice: 1 tablespoon
+                            <br>🍥Fresh Coriander Leaves: for garnish
+                        </p>
+                        <h3>Instructions:</h3>
+                        <p><br>🍥Marinate chicken pieces in yogurt, ginger garlic paste, chili powder, turmeric, and salt for at least 30 minutes.
+                            <br>🍥Heat butter in a pan, add chopped onions, and sauté until golden brown.
+                            <br>🍥Add ginger garlic paste and cook until fragrant, then pour in tomato puree and cook until oil separates.
+                            <br>🍥Stir in garam masala, cumin powder, coriander powder, and kasuri methi, cook for a minute.
+                            <br>🍥Add marinated chicken pieces and cook until they are almost cooked through.
+                            <br>🍥Pour in heavy cream and cashew paste (if using), stir well and simmer for another 5-7 minutes.
+                            <br>🍥Adjust seasoning with salt, sugar, and lemon juice according to taste.
+                            <br>🍥Garnish with fresh coriander leaves and serve hot with rice or naan bread. Enjoy your creamy Butter Chicken!
+                        </p>
+                
+                    </div>
+                    <div class = "meal-img">
+                        <img src = "butter-chicken.jpg" alt = "">
+                      </div>
+                      <div class = "meal-link">
+                        <a href="https://www.youtube.com/watch?v=D_fYk8mBaF4&pp=ygUVYnV0dGVyIGNoaWNrZW4gcmVjaXBl" class="meal-link-btn" >Watch Video</a>
+                    </div>
+                </div>
+            </div>  
+            <div class = "five-meal-detail" id="five-meal-detail">
+                <!-- recipe close btn -->
+                <button type = "button" class = "btn recipe-close-btn" id = "recipe-close-btn" onclick="closeBtn()">
+                    <i class ="fas fa-times"></i>
+                </button>
+
+                <!-- recipe details -->
+                <div class="meal-content">
+                    <h2 class="meal-name">Aloo Gobi</h2>
+                    <div class="meal-about">
+                        <h3 class="meal-title-about">About Meal</h3>
+                        <p class="meal-descript-about">Aloo Gobi is a classic vegetarian dish from the Indian subcontinent, made with potatoes (aloo) and cauliflower (gobi) cooked in a blend of aromatic spices.
+                        </p>
+                    </div>
+                    <div class = "meal-instruct">
+                        <h3>Ingredients:</h3>
+                        <p><br>🍥Potatoes: 2 medium-sized, peeled and cubed
+                            <br>🍥Cauliflower: 1 medium-sized head, cut into florets
+                            <br>🍥Onion: 1 large, finely chopped
+                            <br>🍥Tomatoes: 2 medium-sized, chopped
+                            <br>🍥Ginger: 1-inch piece, grated or finely chopped
+                            <br>🍥Garlic: 3-4 cloves, minced
+                            <br>🍥Green Chilies: 2-3, slit lengthwise (adjust to taste)
+                            <br>🍥Cumin Seeds: 1 teaspoon
+                            <br>🍥Turmeric Powder: 1/2 teaspoon
+                            <br>🍥Coriander Powder: 1 teaspoon
+                            <br>🍥Cumin Powder: 1/2 teaspoon
+                            <br>🍥Red Chili Powder: 1/2 teaspoon (adjust to taste)
+                            <br>🍥Garam Masala: 1 teaspoon
+                            <br>🍥Salt: to taste
+                            <br>🍥Fresh Cilantro Leaves: a handful, chopped (for garnish)
+                            <br>🍥Oil or Ghee: 2-3 tablespoons
+                        </p>
+                        <h3>Instructions:</h3>
+                        <p><br>🍥Heat oil or ghee in a pan, add cumin seeds and let them splutter.
+                            <br>🍥Add chopped onions, ginger, garlic, and green chilies, sauté until onions turn golden brown.
+                            <br>🍥Stir in chopped tomatoes and cook until they soften and form a thick paste.
+                            <br>🍥Add turmeric powder, coriander powder, cumin powder, red chili powder, and salt, cook for a minute.
+                            <br>🍥Add cubed potatoes and cauliflower florets to the pan, coat them well with the spice mixture.
+                            <br>🍥Cover and cook on low heat for 15-20 minutes, stirring occasionally, until vegetables are tender.
+                            <br>🍥Sprinkle garam masala over the cooked Aloo Gobi, mix well, and cook for another 2-3 minutes.
+                            <br>🍥Garnish with chopped cilantro leaves and serve hot with roti or rice. Enjoy your delicious Aloo Gobi!
+                        </p>
+                
+                    </div>
+                    <div class = "meal-img">
+                        <img src = "aloo-gobi.jpg" alt = "">
+                      </div>
+                      <div class = "meal-link">
+                        <a href="https://www.youtube.com/watch?v=JihdOvkxQC8&pp=ygUQYWxvbyBnb2JpIHJlY2lwZQ%3D%3D" class="meal-link-btn" >Watch Video</a>
+                    </div>
+                </div>
+            </div> 
+            <div class = "six-meal-detail" id="six-meal-detail">
+                <!-- recipe close btn -->
+                <button type = "button" class = "btn recipe-close-btn" id = "recipe-close-btn" onclick="closeBtn6()">
+                    <i class ="fas fa-times"></i>
+                </button>
+
+                <!-- recipe details -->
+                <div class="meal-content">
+                    <h2 class="meal-name">Channa Masala</h2>
+                    <div class="meal-about">
+                        <h3 class="meal-title-about">About Meal</h3>
+                        <p class="meal-descript-about">Chana Masala, also known as Chole Masala, is a popular North Indian dish made with chickpeas (chana) cooked in a rich and flavorful tomato-based gravy.
+                        </p>
+                    </div>
+                    <div class = "meal-instruct">
+                        <h3>Ingredients:</h3>
+                        <p><br>🍥Chickpeas (Chana): 2 cups, cooked or canned
+                            <br>🍥Onion: 1 large, finely chopped
+                            <br>🍥Tomatoes: 2 medium-sized, chopped
+                            <br>🍥Ginger: 1-inch piece, grated or finely chopped
+                            <br>🍥Garlic: 3-4 cloves, minced
+                            <br>🍥Green Chilies: 2-3, slit lengthwise (adjust to taste)
+                            <br>🍥Cumin Seeds: 1 teaspoon
+                            <br>🍥Coriander Powder: 1 tablespoon
+                            <br>🍥Cumin Powder: 1 teaspoon
+                            <br>🍥Turmeric Powder: 1/2 teaspoon
+                            <br>🍥Red Chili Powder: 1/2 teaspoon (adjust to taste)
+                            <br>🍥Garam Masala: 1 teaspoon
+                            <br>🍥Amchur (Dry Mango Powder): 1 teaspoon
+                            <br>🍥Salt: to taste
+                            <br>🍥Fresh Cilantro Leaves: a handful, chopped (for garnish)
+                            <br>🍥Oil or Ghee: 2-3 tablespoons
+                        </p>
+                        <h3>Instructions:</h3>
+                        <p><br>🍥Heat oil or ghee in a pan, add cumin seeds and let them splutter.
+                            <br>🍥Add chopped onions, ginger, garlic, and green chilies, sauté until onions turn golden brown.
+                            <br>🍥Stir in chopped tomatoes and cook until they soften and form a thick paste.
+                            <br>🍥Add coriander powder, cumin powder, turmeric, red chili powder, and salt, cook for a minute.
+                            <br>🍥Add cooked chickpeas (chana) to the pan along with a splash of water.
+                            <br>🍥Simmer for 10-15 minutes, allowing the flavors to meld together.
+                            <br>🍥Stir in garam masala and amchur powder, cook for another 2-3 minutes.
+                            <br>🍥Garnish with chopped cilantro leaves and serve hot with rice or naan. Enjoy your delicious Chana Masala!
+                        </p>
+                
+                    </div>
+                    <div class = "meal-img">
+                        <img src = "channa-masala.jpg" alt = "">
+                      </div>
+                      <div class = "meal-link">
+                        <a href="https://www.youtube.com/watch?v=3Vf5_St-DEo&pp=ygUUY2hhbm5hIG1hc2FsYSByZWNpcGU%3D" class="meal-link-btn" >Watch Video</a>
+                    </div>
+                </div>
+            </div> 
+            <div class = "seven-meal-detail" id="seven-meal-detail">
+                <!-- recipe close btn -->
+                <button type = "button" class = "btn recipe-close-btn" id = "recipe-close-btn" onclick="closeBtn7()">
+                    <i class ="fas fa-times"></i>
+                </button>
+
+                <!-- recipe details -->
+                <div class="meal-content">
+                    <h2 class="meal-name">Mutton Rogan Josh</h2>
+                    <div class="meal-about">
+                        <h3 class="meal-title-about">About Meal</h3>
+                        <p class="meal-descript-about">Rogan Josh is a traditional Kashmiri dish known for its rich, aromatic, and deeply flavorful sauce.
+                        </p>
+                    </div>
+                    <div class = "meal-instruct">
+                        <h3>Ingredients:</h3>
+                        <p><br>🍥Mutton: 500 grams, cut into bite-sized pieces
+                            <br>🍥Onions: 2 large, finely chopped
+                            <br>🍥Tomatoes: 2 medium-sized, chopped
+                            <br>🍥Yogurt: 1/2 cup, whisked until smooth
+                            <br>🍥Ginger Garlic Paste: 2 tablespoons
+                            <br>🍥Kashmiri Red Chili Powder: 2-3 tablespoons (adjust to taste)
+                            <br>🍥Fennel Seeds: 1 teaspoon
+                            <br>🍥Cumin Seeds: 1 teaspoon
+                            <br>🍥Cardamom Pods: 4-5, crushed
+                            <br>🍥Cloves: 4-5
+                            <br>🍥Cinnamon Stick: 1-inch piece
+                            <br>🍥Bay Leaves: 2
+                            <br>🍥Ghee or Oil: 4-5 tablespoons
+                            <br>🍥Salt: to taste
+                            <br>🍥Fresh Coriander Leaves: a handful, chopped (for garnish)
+                        </p>
+                        <h3>Instructions:</h3>
+                        <p><br>🍥Marinate mutton pieces in yogurt, ginger garlic paste, Kashmiri red chili powder, and salt for at least 2 hours or overnight.
+                            <br>🍥Heat ghee or oil in a heavy-bottomed pot, add crushed cardamom pods, cloves, cinnamon stick, bay leaves, fennel seeds, and cumin seeds, sauté until fragrant.
+                            <br>🍥Add finely chopped onions and sauté until golden brown.
+                            <br>🍥Stir in chopped tomatoes and cook until they form a thick paste.
+                            <br>🍥Add marinated mutton and cook until the meat is tender, stirring occasionally.
+                            <br>🍥Sprinkle Kashmiri red chili powder and adjust salt to taste.
+                            <br>🍥Optionally, add saffron-infused milk or ground almonds/cashew nut paste for richness.
+                            <br>🍥Garnish with chopped coriander leaves and serve hot with rice or naan. Enjoy your flavorful Mutton Rogan Josh!
+                        </p>
+                
+                    </div>
+                    <div class = "meal-img">
+                        <img src = "mutton-rogan-josh.webp" alt = "">
+                      </div>
+                      <div class = "meal-link">
+                        <a href="https://www.youtube.com/watch?v=g_hvkyYPAMQ&pp=ygURbXV0dG9uIHJvZ2FuIGpvc2g%3D" class="meal-link-btn" >Watch Video</a>
+                    </div>
+                </div>
+            </div> 
+            <div class = "eight-meal-detail" id="eight-meal-detail">
+                <!-- recipe close btn -->
+                <button type = "button" class = "btn recipe-close-btn" id = "recipe-close-btn" onclick="closeBtn8()">
+                    <i class ="fas fa-times"></i>
+                </button>
+
+                <!-- recipe details -->
+                <div class="meal-content">
+                    <h2 class="meal-name">Sabut Masoor Dal</h2>
+                    <div class="meal-about">
+                        <h3 class="meal-title-about">About Meal</h3>
+                        <p class="meal-descript-about">Sabut Masoor Dal is a traditional Indian dish made from whole brown lentils (also known as brown lentils or whole masoor dal). 
+                        </p>
+                    </div>
+                    <div class = "meal-instruct">
+                        <h3>Ingredients:</h3>
+                        <p><br>🍥Whole Brown Lentils (Sabut Masoor Dal): 1 cup
+                            <br>🍥Onion: 1 large, finely chopped
+                            <br>🍥Tomato: 1 medium-sized, chopped
+                            <br>🍥Garlic: 3-4 cloves, minced
+                            <br>🍥Ginger: 1-inch piece, grated or finely chopped
+                            <br>🍥Green Chilies: 2-3, slit lengthwise (adjust to taste)
+                            <br>🍥Cumin Seeds: 1 teaspoon
+                            <br>🍥Turmeric Powder: 1/2 teaspoon
+                            <br>🍥Coriander Powder: 1 teaspoon
+                            <br>🍥Garam Masala: 1/2 teaspoon
+                            <br>🍥Salt: to taste
+                            <br>🍥Oil or Ghee: 2-3 tablespoons
+                            <br>🍥Water: 3-4 cups (for cooking lentils)
+                            <br>🍥Fresh Cilantro Leaves: a handful, chopped (for garnish)
+                            
+                        </p>
+                        <h3>Instructions:</h3>
+                        <p><br>🍥Rinse the whole brown lentils (sabut masoor dal) under running water and soak them for a few hours or overnight.
+                            <br>🍥In a pressure cooker or pot, heat oil or ghee and add cumin seeds. Let them splutter.
+                            <br>🍥Add chopped onions, garlic, ginger, and green chilies, sauté until onions turn golden brown.
+                            <br>🍥Stir in chopped tomatoes and cook until they soften and form a thick paste.
+                            <br>🍥Drain the soaked lentils and add them to the pot along with turmeric powder, coriander powder, garam masala, and salt.
+                            <br>🍥Add water and mix well. Pressure cook for 3-4 whistles or simmer on the stovetop until lentils are cooked and tender.
+                            <br>🍥Once cooked, mash the lentils slightly with the back of a spoon to thicken the consistency.
+                            <br>🍥Garnish with chopped cilantro leaves and serve hot with rice or roti. Enjoy your wholesome Sabut Masoor Dal!
+                        </p>
+                
+                    </div>
+                    <div class = "meal-img">
+                        <img src = "Sabut-Masoor-Dal-.webp" alt = "">
+                      </div>
+                      <div class = "meal-link">
+                        <a href="https://www.youtube.com/watch?v=sa3Rq4g39Cw&pp=ygUXc2FidXQgbWFzb29yIGRhbCByZWNpcGU%3D" class="meal-link-btn" >Watch Video</a>
+                    </div>
+                </div>
+            </div> 
+            <div class = "nine-meal-detail" id="nine-meal-detail">
+                <!-- recipe close btn -->
+                <button type = "button" class = "btn recipe-close-btn" id = "recipe-close-btn" onclick="closeBtn9()">
+                    <i class ="fas fa-times"></i>
+                </button>
+
+                <!-- recipe details -->
+                <div class="meal-content">
+                    <h2 class="meal-name">Malai Kofta</h2>
+                    <div class="meal-about">
+                        <h3 class="meal-title-about">About Meal</h3>
+                        <p class="meal-descript-about">Malai Kofta is a popular North Indian dish known for its rich and creamy gravy and melt-in-your-mouth koftas (dumplings).
+                        </p>
+                    </div>
+                    <div class = "meal-instruct">
+                        <h3>Ingredients:</h3>
+                        <p><br><b>For Koftas:</b>
+
+                            <br>🍥Paneer (Indian Cottage Cheese): 200 grams, crumbled
+                            <br>🍥Potatoes: 2 medium-sized, boiled and mashed
+                            <br>🍥Corn Flour or All-Purpose Flour: 2-3 tablespoons (as a binding agent)
+                            <br>🍥Green Chili: 1, finely chopped (adjust to taste)
+                            <br>🍥Ginger: 1-inch piece, grated
+                            <br>🍥Cashews: 2 tablespoons, finely chopped
+                            <br>🍥Raisins: 2 tablespoons, chopped
+                            <br>🍥Garam Masala: 1 teaspoon
+                            <br>🍥Salt: t<br>o taste
+                            <br>🍥Oil: for frying
+                            <br><b>For Gravy:</b>
+                            
+                            <br>🍥Onion: 1 large, roughly chopped
+                            <br>🍥Tomatoes: 2 medium-sized, roughly chopped
+                            <br>🍥Cashews: 10-12, soaked in warm water for 30 minutes
+                            <br>🍥Ginger-Garlic Paste: 1 tablespoon
+                            <br>🍥Green Chilies: 2, slit lengthwise
+                            <br>🍥Heavy Cream: 1/4 cup
+                            <br>🍥Cumin Seeds: 1 teaspoon
+                            <br>🍥Turmeric Powder: 1/2 teaspoon
+                            <br>🍥Coriander Powder: 1 teaspoon
+                            <br>🍥Garam Masala: 1 teaspoon
+                            <br>🍥Kasuri Methi (Dried Fenugreek Leaves): 1 tablespoon
+                            <br>🍥Salt: to taste
+                            <br>🍥Oil or Ghee: 2 tablespoons
+                            <br>🍥Fresh Cilantro Leaves: for garnish
+                        </p>
+                        <h3>Instructions:</h3>
+                        <p><br>🍥In a large bowl, mix crumbled paneer, mashed potatoes, chopped cashews, raisins, green chili, grated ginger, garam masala, salt, and corn flour/all-purpose flour until well combined.
+                            <br>🍥Divide the mixture into small portions and shape them into round balls, ensuring there are no cracks.
+                            <br>🍥Heat oil in a deep pan over medium heat for frying.
+                            <br>🍥Carefully add the kofta balls into the hot oil and fry until they turn golden brown and crispy. Remove and drain excess oil on paper towels.
+                            <br>🍥In a separate pan, heat oil or ghee and add cumin seeds. Once they splutter, add chopped onions and sauté until golden brown.
+                            <br>🍥Add ginger-garlic paste and slit green chilies, sauté until the raw aroma disappears.
+                            <br>🍥Stir in chopped tomatoes and cook until they turn soft and mushy.
+                            <br>🍥Add soaked cashews along with turmeric powder, coriander powder, garam masala, and salt. Cook until the mixture thickens.
+                            <br>🍥Pour in heavy cream, kasuri methi, and water (if needed), simmer for a few minutes, then add the fried koftas. Garnish with chopped cilantro leaves and serve hot with rice or naan. Enjoy your creamy Malai Kofta!                            
+                        </p>
+                
+                    </div>
+                    <div class = "meal-img">
+                        <img src = "malai-kofta.jpg" alt = "">
+                      </div>
+                      <div class = "meal-link">
+                        <a href="https://www.youtube.com/watch?v=c8Lh4vzSQG0&pp=ygUSbWFsYWkga29mdGEgcmVjaXBl" class="meal-link-btn" >Watch Video</a>
+                    </div>
+                </div>
+            </div> 
+            <div class = "ten-meal-detail" id="ten-meal-detail">
+                <!-- recipe close btn -->
+                <button type = "button" class = "btn recipe-close-btn" id = "recipe-close-btn" onclick="closeBtn10()">
+                    <i class ="fas fa-times"></i>
+                </button>
+
+                <!-- recipe details -->
+                <div class="meal-content">
+                    <h2 class="meal-name">Dal Makhani</h2>
+                    <div class="meal-about">
+                        <h3 class="meal-title-about">About Meal</h3>
+                        <p class="meal-descript-about">Dal Makhani is a rich and creamy Indian dish made from black lentils (urad dal) and kidney beans (rajma), simmered with tomatoes, onions, and a blend of aromatic spices. 
+                        </p>
+                    </div>
+                    <div class = "meal-instruct">
+                        <h3>Ingredients:</h3>
+                        <p><br>🍥Black Lentils (Whole Urad Dal): 1 cup
+                            <br>🍥Kidney Beans (Rajma): 1/4 cup
+                            <br>🍥Onion: 1 large, finely chopped
+                            <br>🍥Tomato: 2 medium-sized, finely chopped or pureed
+                            <br>🍥Ginger: 1-inch piece, grated or finely chopped
+                            <br>🍥Garlic: 4-5 cloves, minced
+                            <br>🍥Green Chilies: 2-3, slit lengthwise (adjust to taste)
+                            <br>🍥Butter: 2-3 tablespoons
+                            <br>🍥Cream: 1/4 cup (optional, for richness)
+                            <br>🍥Cumin Seeds: 1 teaspoon
+                            <br>🍥Coriander Powder: 1 teaspoon
+                            <br>🍥Turmeric Powder: 1/2 teaspoon
+                            <br>🍥Garam Masala: 1 teaspoon
+                            <br>🍥Red Chili Powder: 1/2 teaspoon (adjust to taste)
+                            <br>🍥Salt: to taste
+                            <br>🍥Water: 3-4 cups
+                            <br>🍥Fresh Coriander Leaves: a handful, chopped (for garnish)
+                        </p>
+                        <h3>Instructions:</h3>
+                        <p><br>🍥Rinse black lentils (whole urad dal) and kidney beans (rajma) and soak them separately overnight or for at least 8 hours.
+                            <br>🍥Pressure cook the soaked lentils and kidney beans with water until soft and mushy, then set aside.
+                            <br>🍥In a pan, heat butter and add cumin seeds. Once they splutter, add chopped onions, ginger, garlic, and green chilies, and sauté until golden brown.
+                            <br>🍥Add chopped tomatoes and cook until they turn soft and mushy.
+                            <br>🍥Stir in coriander powder, turmeric powder, red chili powder, and salt, and cook for a couple of minutes.
+                            <br>🍥Add the cooked lentils and kidney beans along with some water, and simmer for about 30-40 minutes, stirring occasionally.
+                            <br>🍥Once the dal has thickened and flavors have melded together, add garam masala and cream (if using), and cook for another 5 minutes.
+                            <br>🍥Adjust seasoning if needed, then garnish with chopped coriander leaves.
+                            <br>🍥Serve hot with rice or naan bread. Enjoy your creamy and flavorful Dal Makhani!
+                        </p>
+                
+                    </div>
+                    <div class = "meal-img">
+                        <img src = "Dal-makhani.jpg" alt = "">
+                      </div>
+                      <div class = "meal-link">
+                        <a href="https://www.youtube.com/watch?v=o3k55z-tv9I&pp=ygUTZGFsIG1ha2hhbmkgcmVjaXBlIA%3D%3D" class="meal-link-btn" >Watch Video</a>
+                    </div>
+                </div>
+            </div> 
+            <div class = "eleven-meal-detail" id="eleven-meal-detail">
+                <!-- recipe close btn -->
+                <button type = "button" class = "btn recipe-close-btn" id = "recipe-close-btn" onclick="closeBtn11()">
+                    <i class ="fas fa-times"></i>
+                </button>
+
+                <!-- recipe details -->
+                <div class="meal-content">
+                    <h2 class="meal-name">Samosas</h2>
+                    <div class="meal-about">
+                        <h3 class="meal-title-about">About Meal</h3>
+                        <p class="meal-descript-about">Samosa is a popular savory snack originating from the Indian subcontinent, consisting of a crispy pastry shell filled with a savory mixture.
+                        </p>
+                    </div>
+                    <div class = "meal-instruct">
+                        <h3>Ingredients:</h3>
+                        <p><br><b>For the Pastry:</b>
+
+                            <br>🍥All-purpose Flour (Maida): 2 cups
+                            <br>🍥Oil or Ghee: 4-5 tablespoons
+                            <br>🍥Salt: 1/2 teaspoon as needed
+                            <br><b>For the Filling:</b>
+                            <br>🍥Potatoes: 3 medium-sized, boiled and mashed
+                            <br>🍥Green Peas: 1/2 cup, boiled or frozen
+                            <br>🍥Onion: 1 large, finely chopped
+                            <br>🍥Ginger: 1-inch piece, grated or finely chopped
+                            <br>🍥Green Chilies: 1-2, finely chopped (adjust to taste)
+                            <br>🍥Cumin Seeds: 1 teaspoon
+                            <br>🍥Coriander Seeds: 1 teaspoon, crushed (optional)
+                            <br>🍥Turmeric Powder: 1/2 teaspoon
+                            <br>🍥Coriander Powder: 1 teaspoon
+                            <br>🍥Garam Masala: 1 teaspoon
+                            <br>🍥Amchur (Dry Mango Powder) or Lemon Juice: 1 teaspoon
+                            <br>🍥Salt: to taste
+                            <br>🍥Oil: 2-3 tablespoons for sautéing
+                            <br><b>For Deep Frying:</b>
+                            <br>🍥Oil: for deep frying
+                        </p>
+                        <h3>Instructions:</h3>
+                        <p><br>🍥Prepare the dough by mixing flour, salt, and oil/ghee, then gradually adding water to form a firm dough. Let it rest for 30 minutes.
+                            <br>🍥Boil, peel, and mash the potatoes. Sauté chopped onions, ginger, green chilies, and cumin seeds in oil until golden.
+                            <br>🍥Add crushed coriander seeds, turmeric powder, coriander powder, and garam masala, cook for a minute.
+                            <br>🍥Mix in mashed potatoes, boiled peas, amchur, and salt, cook for a few minutes until well combined.
+                            <br>🍥Divide the dough into small balls, roll out each ball into a thin circle, then cut it in half to form semi-circles.
+                            <br>🍥Take one semi-circle, moisten the edges with water, and form a cone shape, then fill it with the potato-pea mixture.
+                            <br>🍥Seal the edges tightly, making sure there are no openings.
+                            <br>🍥Heat oil for deep frying, then fry the samosas in batches until they turn golden brown and crispy.
+                            <br>🍥Drain excess oil on paper towels, then serve hot with chutney or sauce of your choice. Enjoy your delicious homemade samosas!
+                        </p>
+                
+                    </div>
+                    <div class = "meal-img">
+                        <img src = "samosa.webp" alt = "">
+                      </div>
+                      <div class = "meal-link">
+                        <a href="https://www.youtube.com/watch?v=HCyalu9KMIs&pp=ygUNc2Ftb3NhIHJlY2lwZQ%3D%3D" class="meal-link-btn" >Watch Video</a>
+                    </div>
+                </div>
+            </div> 
+            
+            <div class = "twelve-meal-detail" id="twelve-meal-detail">
+                <!-- recipe close btn -->
+                <button type = "button" class = "btn recipe-close-btn" id = "recipe-close-btn" onclick="closeBtn12()">
+                    <i class ="fas fa-times"></i>
+                </button>
+
+                <!-- recipe details -->
+                <div class="meal-content">
+                    <h2 class="meal-name">Paneer Butter Masala</h2>
+                    <div class="meal-about">
+                        <h3 class="meal-title-about">About Meal</h3>
+                        <p class="meal-descript-about">Paneer Butter Masala is a popular vegetarian dish from the Indian subcontinent, consisting of paneer (Indian cottage cheese) cubes cooked in a creamy, buttery tomato-based gravy. 
+                        </p>
+                    </div>
+                    <div class = "meal-instruct">
+                        <h3>Ingredients:</h3>
+                        <p><br>🍥Paneer (Indian Cottage Cheese): 200-250 grams, cut into cubes
+                            <br>🍥Tomatoes: 3 medium-sized, roughly chopped
+                            <br>🍥Onion: 1 large, finely chopped
+                            <br>🍥Ginger: 1-inch piece, grated or finely chopped
+                            <br>🍥Garlic: 3-4 cloves, minced
+                            <br>🍥Butter: 2-3 tablespoons
+                            <br>🍥Cream: 1/4 cup
+                            <br>🍥Cashew Nuts: 10-12 pieces (optional, for creaminess)
+                            <br>🍥Green Chilies: 1-2, slit lengthwise (adjust to taste)
+                            <br>🍥Kashmiri Red Chili Powder: 1 teaspoon (for color, adjust to taste)
+                            <br>🍥Turmeric Powder: 1/2 teaspoon
+                            <br>🍥Coriander Powder: 1 teaspoon
+                            <br>🍥Garam Masala: 1/2 teaspoon
+                            <br>🍥Kasuri Methi (Dried Fenugreek Leaves): 1 teaspoon
+                            <br>🍥Sugar: 1 teaspoon (optional, to balance acidity)
+                            <br>🍥Salt: to taste
+                            <br>🍥Oil: 2-3 tablespoons
+                            <br>🍥Fresh Coriander Leaves: for garnish
+                        </p>
+                        <h3>Instructions:</h3>
+                        <p><br>🍥Heat oil in a pan, add chopped onions, ginger, and garlic, sauté until golden brown.
+                            <br>🍥Add chopped tomatoes and cook until they turn soft and pulpy.
+                            <br>🍥Let the mixture cool, then blend into a smooth puree.
+                            <br>🍥In the same pan, melt butter, add the tomato puree, and cook for a few minutes.
+                            <br>🍥Stir in Kashmiri red chili powder, turmeric powder, coriander powder, and salt, cook until the spices are fragrant.
+                            <br>🍥Add cream, garam masala, and sugar (if using), mix well.
+                            <br>🍥Gently add paneer cubes and kasuri methi, simmer for a few minutes until the flavors meld together.
+                            <br>🍥Garnish with fresh coriander leaves and serve hot with naan or rice. Enjoy your delicious Paneer Butter Masala!
+                        </p>
+                
+                    </div>
+                    <div class = "meal-img">
+                        <img src = "vertical-shot-traditional-indian-paneer-butter-masala-cheese-cottage-curry-black-surface.jpg" alt = "">
+                      </div>
+                      <div class = "meal-link">
+                        <a href="https://www.youtube.com/watch?v=bUounn_Bmy4&pp=ygUbcGFuZWVyIGJ1dHRlciBtYXNhbGEgcmVjaXBl" class="meal-link-btn" >Watch Video</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+            <!--Ending of Recipe Details-->
+
+            <!--Footer-->
+    <div class="footer">
+        <div class="social-btn">
+            <a href="https://www.facebook.com/" target="_blank" ><i class="	fab fa-facebook"></i></a>
+            <a href="https://www.instagram.com/" target="_blank" ><i class="	fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/in/soundarya-sn-31585822a/" target="_blank"><i class="	fab fa-linkedin"></i></a>
+            <a href="https://github.com/Soundarya2106" target="_blank" ><i class="	fab fa-github"></i></a>
+        </div>
+            <div class="quick-bar">
+                <a href="index.html">Home</a>
+                <a href="Add.html">Add Recipe</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        <p>Copyright &copy; 2024 Soundarya. All right reserved</p>  
+    </div>
+
+    <!--Ending of Footer-->
+
+<!--Script for Javascript-->
+<script src="index.js"></script>
+
+</body>
+</html>

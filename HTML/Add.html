@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="menu.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <title>Tasty Tales</title>
+    <style>
+
+body{
+    background-image: url(pexels-lukas-349610.jpg);
+    background-repeat: repeat;
+}    
+
+.Add-wrapper{
+  position: relative;
+  width: 100%;
+  padding: 50px 100px;
+}
+.Add-wrapper .Add-title{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2em;
+}
+.Add-wrapper .Add-title h1{
+  color: var(--color);
+  font-weight: 700;
+  margin-bottom: 10px;
+  font-family: 'Lobster',sans-serif;
+}
+
+.add-form{
+  max-width: 700px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: var(--color);
+  border-radius: 10px;
+  box-shadow: 0 0 10px black;
+}
+.InputForm{
+  margin-bottom: 20px;
+}
+
+.InputForm label{
+  color: var(--color3);
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+.InputForm input[type="text"],
+.InputForm input[type="file"],
+.InputForm textarea{
+  color: var(--color4);
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.InputForm textarea{
+    height: 100px;
+}
+.InputForm::placeholder{
+  color: var(--color4);
+}
+
+button[type="submit"]{
+    background-color: var(--color3);
+    color: var(--color4);
+    font-weight: bold;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-left: 262px;
+    transition: background-color 5s ease-in;
+}
+
+.add-form button:hover{
+  color: var(--color);
+  box-shadow: 0 0 10px white;
+}
+
+
+    </style>
+</head>
+<body>
+
+    <!--- Navigation Bar -->
+    <div class="header">
+        <nav class="nav-bar">
+            <img src="menu.png" class="brand-name">
+            <a href="#" class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </a>
+            <div class="menu-bar">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="Add.html">Add Recipe</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="Add-wrapper">
+            <div class="Add-title">
+                <h1>Add New Recipe</h1>
+            </div>
+            <div class="subtitle">
+                    <p>Please submit the form to add a new recipe.</p>
+            </div>
+            <div class="add-form">
+                <form action="/upload" method="post" id="add-form" enctype="multipart/form-data">
+                   <div class="InputForm"> 
+                    <label for="recipe_name">Recipe Name:</label><br>
+                    <input type="text" id="recipe_name" name="recipe_name" placeholder="Type recipe name.." required><br><br>
+                   </div>
+                   <div class="InputForm">
+                    <label for="recipe_about">Recipe About:</label><br>
+                    <textarea id="recipe_about" name="recipe_about" rows="4" cols="50" placeholder="Type about recipe.." required></textarea><br><br>
+                   </div>
+                   <div class="InputForm">
+                    <label for="recipe_image">Recipe Image:</label><br>
+                    <input type="text" id="recipe_image" name="recipe_image" placeholder="Add a file path.." required><br><br>
+                   </div>
+                   <div class="InputForm">
+                    <label for="recipe_ingredients">Recipe Ingredients:</label><br>
+                    <textarea id="recipe_ingredients" name="recipe_ingredients" rows="4" cols="50" placeholder="Type recipe ingredients.." required></textarea><br><br>
+                   </div>
+                   <div class="InputForm"> 
+                    <label for="recipe_instructions">Recipe Instructions:</label><br>
+                    <textarea id="recipe_instructions" name="recipe_instructions" rows="4" cols="50" placeholder="Type recipe instructions.." required></textarea><br><br>
+                   </div>
+                   <div class="InputForm">
+                    <label for="recipe_video_link">Recipe Video Link:</label><br>
+                    <input type="text" id="recipe_video_link" name="recipe_video_link" placeholder="Add video link.."><br><br>
+                   </div> 
+                    <button type="submit">Add recipe</button>
+                </form>
+            </div>
+        </div>    
+
+        <div class="footer">
+            <div class="social-btn">
+                <a href="https://www.facebook.com/Cmedsss" target="_blank" ><i class="	fab fa-facebook"></i></a>
+                <a href="https://www.instagram.com/tiaanmeds/" target="_blank" ><i class="	fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/in/tianmeds/" target="_blank"><i class="	fab fa-linkedin"></i></a>
+                <a href="https://github.com/TianMeds" target="_blank" ><i class="	fab fa-github"></i></a>
+            </div>
+                <div class="quick-bar">
+                    <a href="index.html">Home</a>
+                    <a href="Add.html">Add Recipe</a>
+                    <a href="about.html">About</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+            <p>Copyright &copy; 2024 Soundarya. All right reserved</p>  
+        </div>
+    
+        <!--Ending of Footer-->
+    
+    <!--Script for Javascript-->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const recipeForm = document.getElementById('add-form');
+
+        recipeForm.addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the default form submission behavior
+
+            // Extract form data
+            const formData = {
+                recipe_name: recipeForm.querySelector('#recipe_name').value,
+                recipe_about: recipeForm.querySelector('#recipe_about').value,
+                recipe_image: recipeForm.querySelector('#recipe_image').value,
+                recipe_ingredients: recipeForm.querySelector('#recipe_ingredients').value,
+                recipe_instructions: recipeForm.querySelector('#recipe_instructions').value,
+                recipe_video_link: recipeForm.querySelector('#recipe_video_link').value
+            };
+
+            // Save the form data to local storage
+            saveRecipeToLocalStorage(formData);
+
+            // Display success message
+            displaySuccessMessage();
+
+            // Clear the form fields (optional)
+            recipeForm.reset();
+        });
+    });
+
+    function saveRecipeToLocalStorage(recipeData) {
+        // Retrieve existing recipes from local storage
+        let recipes = JSON.parse(localStorage.getItem('recipes')) || [];
+
+        // Add the new recipe data
+        recipes.push(recipeData);
+
+        // Save the updated recipes to local storage
+        localStorage.setItem('recipes', JSON.stringify(recipes));
+    }
+
+    function displaySuccessMessage() {
+        alert('Recipe added successfully!');
+    }
+     
+    // Function to handle form submission
+function handleFormSubmit(event) {
+    event.preventDefault(); // Prevent the default form submission
+
+    // Get the file input element
+    var fileInput = document.getElementById('recipe_image');
+
+    // Check if a file is selected
+    if (fileInput.files.length > 0) {
+        // Access the File object
+        var file = fileInput.files[0];
+
+        // Perform further processing with the file, such as uploading it to the server
+        // Example: You can use AJAX/Fetch to upload the file to the server
+        uploadFile(file);
+    } else {
+        // Handle the case where no file is selected
+        console.error('No file selected.');
+    }
+}
+
+// Function to upload the file to the server
+function uploadFile(file) {
+    // You can implement your file upload logic here
+    // For example, use AJAX/Fetch to send the file data to the server
+    // Here's a basic example using Fetch API:
+    fetch('/upload', {
+        method: 'POST',
+        body: file
+    })
+    .then(response => {
+        if (response.ok) {
+            console.log('File uploaded successfully.');
+            // Handle success response from the server
+        } else {
+            console.error('File upload failed.');
+            // Handle error response from the server
+        }
+    })
+    .catch(error => {
+        console.error('An error occurred during file upload:', error);
+        // Handle network errors or other exceptions
+    });
+}
+
+// Add event listener to the form for submission
+var form = document.getElementById('recipeForm');
+form.addEventListener('submit', handleFormSubmit);
+
+
+
+
+    </script>
+    
+    </body>
+    </html>
